@@ -1,13 +1,10 @@
 def verifica_tabuleiro(tabuleiro, linha, coluna):
-    tamanho = len(tabuleiro)  # Determina o tamanho do tabuleiro
+    tamanho = len(tabuleiro)
 
-    print("Verificando tab")
-    # Verifica a linha inteira
     for j in range(tamanho):
         if tabuleiro[linha][j] == 'r':
             return False
 
-    # Verifica a coluna inteira
     for i in range(tamanho):
         if tabuleiro[i][coluna] == 'r':
             return False
@@ -18,12 +15,10 @@ def verifica_tabuleiro(tabuleiro, linha, coluna):
         c -= 1
         l -= 1
     while (c < coluna) and (l < linha):
-        print(f"Verificando diag c,l: {c, l}")
         if tabuleiro[l][c] == "r":
             return False
-        c +=1
+        c+=1
         l+=1
-    
     
     c = coluna
     l = linha
@@ -31,7 +26,6 @@ def verifica_tabuleiro(tabuleiro, linha, coluna):
         c += 1
         l -= 1
     while (c > coluna) and (l < linha):
-        print(f"Verificando diag c,l: {c, l}")
         if tabuleiro[l][c] == "r":
             return False
         c -= 1
